@@ -1,0 +1,22 @@
+---
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+
+const { frontmatter } = Astro.props;
+---
+<Layout title={frontmatter.title}>
+    <div class="container">
+      <div class="meta">
+        <div>    
+         
+          <h1 class="title">{frontmatter.title}</h1>
+          <p class="description">{frontmatter.description}</p>
+        
+        </div>
+        <img class="poster" src={frontmatter.image.url}  alt={frontmatter.image.alt} />
+      </div>  
+      <div class="body">
+        <slot />
+      </div>
+    </div>
+  </Layout>
