@@ -7,4 +7,3 @@ description: "We’ll also create a second author file called monica.md with the
 ---
 
 Post One
-

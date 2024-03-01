@@ -6,52 +6,52 @@ import { z, defineCollection } from 'astro:content';
 const clientsCollection = defineCollection({
     
     schema: z.object({
-        client: z.string(),
+        clientName: z.string(),
         tags: z.array(z.string()),
         image: z.string().optional(),
         headline: z.string()
       
-  })
+        })
     });
 
-// const projectCollection = defineCollection({
+const projectsCollection = defineCollection({
 
-//     schema: z.object({
-// 		title: z.string(),
-// 		description: z.string(),
-// 		intro: z.string().optional(),
-// 		thumbnail: z.string(),
-// 		og_image: z.string().optional(),
-// 		tag: z.array(z.string()).optional(),
-//       }),
-// });
+    schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		intro: z.string().optional(),
+		thumbnail: z.string(),
+		og_image: z.string().optional(),
+		tag: z.array(z.string()).optional(),
+      })
+    });
 
-// const bylines = defineCollection({
+const bylinesCollection = defineCollection({
 
-//     schema: z.object({
-//         title: z.string(),
-//         tags: z.array(z.string()),
-//         image: z.string().optional(),
-//       }),
-// });
+    schema: z.object({
+        title: z.string(),
+        tags: z.array(z.string()),
+        image: z.string().optional(),
+      })
+});
 
-// const blog = defineCollection({
+const posts = defineCollection({
 
-//     schema: z.object({
-//         title: z.string(),
-//         tags: z.array(z.string()),
-//         image: z.string().optional(),
-//         bodytext: z.string(),
-//         description: z.string(),
-//       }),
-// });
+    schema: z.object({
+        title: z.string(),
+        tags: z.array(z.string()),
+        image: z.string().optional(),
+        bodytext: z.string(),
+        description: z.string(),
+      })
+});
 
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
-    clients: clientsCollection,
-    // 'project': projectCollection,
-    // 'bylines': bylines,
-    // 'hot-takes': blog,
+    client: clientsCollection,
+    project: projectsCollection,
+    byline: bylinesCollection,
+    post: posts,
 };
   
 

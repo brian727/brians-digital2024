@@ -2,18 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import { getCollection } from "astro:content";
+import ClientList from "../components/ClientList.astro";
 
-const clients = await getCollection("clients");
-console.log(clients)
+const allClients = await getCollection('clients');
+
+
+
 ---
 <Header/>
-<Layout title="Client Case Studies">
+<Layout title="Brians.Digital | Client Case Studies">
   <h1>Client List</h1>
-    {clients.map(client =>(
-      <a href={`/blog/${client.slug}`}>
-        <h2>{client.data.client}</h2>
-      </a>
-      
+    {allClients.map(clients => (
+     <h1>{clients.data.clientName}</h1>
       
     ))}
 </Layout>
