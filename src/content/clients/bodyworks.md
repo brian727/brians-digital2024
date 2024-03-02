@@ -1,8 +1,8 @@
 ---
 clientName: 'Tucson Body Works'
-headline: 'Polissdasdhing up the website, marketing and social media for a B2B business.'
+headline: 'Tucson Body Works Headline'
 image: '/img/hartman1.jpg'
-tags: ['astro']
+tags: ['astro', 'website']
 ---
 
 # Tucson Body Works

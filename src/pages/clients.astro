@@ -4,24 +4,33 @@ import Header from "../components/Header.astro";
 import { getCollection } from "astro:content";
 import ClientList from "../components/ClientList.astro";
 
-const allClients = await getCollection('clients');
+const allClients = await getCollection("clients");
 
 
 
 ---
 <Header/>
 <Layout title="Brians.Digital | Client Case Studies">
-  <h1>Client List</h1>
-    {allClients.map(clients => (
-     <h1>{clients.data.clientName}</h1>
-      
-    ))}
+  
+    {
+      allClients.map(clients => (
+      <div class="py-24">
+        <h2>{clients.data.clientName}</h2>
+        <p>{clients.data.headline}</p>
+        <img src={clients.data.image}/>
+        <p>{clients.data.tags}</p>
+        <a href={`clients/${clients.slug}/`}>Read More</a>
+      </div>
+      ))
+    }
+
+  
 </Layout>
 
 
 
 
-
+<!-- <ClientList clients={allClients}/> -->
 
 <!-- <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
     <div class="absolute inset-0 -z-10 overflow-hidden">

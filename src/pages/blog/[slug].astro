@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+
+export async function getStaticPaths(){
+    const allPosts = await getCollection("posts")
+;
+
+return allPosts.map((post) => ({
+    params: {slug: post.slug},
+    props: {post},
+}));
+}
+
+interface Props {
+    post: CollectionEntry<"post">
+}
+
+const {post} = Astro.props;
+
+const {Content} = await post.render();
+---
+<Header/>
+<Layout title="Brians.Digital | Blog">
+    <h1>{post.data.title}</h1>
+    <Content/>
+</Layout>
+

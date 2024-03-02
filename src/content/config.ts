@@ -3,18 +3,17 @@
 import { z, defineCollection } from 'astro:content';
 
 // 2. Define a `type` and `schema` for each collection
-const clientsCollection = defineCollection({
+const clients = defineCollection({
     
     schema: z.object({
         clientName: z.string(),
-        tags: z.array(z.string()),
+        headline: z.string(),
         image: z.string().optional(),
-        headline: z.string()
-      
+        tags: z.array(z.string()),
         })
     });
 
-const projectsCollection = defineCollection({
+const projects = defineCollection({
 
     schema: z.object({
 		title: z.string(),
@@ -26,7 +25,7 @@ const projectsCollection = defineCollection({
       })
     });
 
-const bylinesCollection = defineCollection({
+const bylines = defineCollection({
 
     schema: z.object({
         title: z.string(),
@@ -48,10 +47,10 @@ const posts = defineCollection({
 
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
-    client: clientsCollection,
-    project: projectsCollection,
-    byline: bylinesCollection,
-    post: posts,
+    clients,
+    projects,
+    bylines,
+    posts,
 };
   
 
