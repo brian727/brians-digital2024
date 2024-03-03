@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/Header.astro";
 import { getCollection, CollectionEntry } from "astro:content";
 
 export async function getStaticPaths(){
@@ -14,16 +13,18 @@ return allPosts.map((post) => ({
 }
 
 interface Props {
-    post: CollectionEntry<"post">
+    post: CollectionEntry<"posts">
 }
 
 const {post} = Astro.props;
 
 const {Content} = await post.render();
+
 ---
-<Header/>
+
 <Layout title="Brians.Digital | Blog">
     <h1>{post.data.title}</h1>
+    <p>{}</p>
     <Content/>
 </Layout>
 

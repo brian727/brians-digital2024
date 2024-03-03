@@ -1,28 +1,30 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
+import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import ClientList from "../components/ClientList.astro";
+import PostCard from "../../components/PostCard.astro";
+
 
 const allClients = await getCollection("clients");
 
 
 
 ---
-<Header/>
+
 <Layout title="Brians.Digital | Client Case Studies">
+  <div class="post-wrapper">'
+    <div class="bg-blue-500 text-white font-bold px-4 py-2 rounded">Case Studies</div>
   
-    {
-      allClients.map(clients => (
-      <div class="py-24">
-        <h2>{clients.data.clientName}</h2>
-        <p>{clients.data.headline}</p>
-        <img src={clients.data.image}/>
-        <p>{clients.data.tags}</p>
-        <a href={`clients/${clients.slug}/`}>Read More</a>
-      </div>
-      ))
-    }
+  </div>
+ 
+    <div>
+    
+        <!-- {allClients.map((clients) => clients.data.clientName)} -->
+        
+    </div>
+    <div>
+      {allClients.map((clients) => clients.data.clientName )}
+    </div>
+    
 
   
 </Layout>

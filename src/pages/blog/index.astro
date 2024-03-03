@@ -1,0 +1,22 @@
+---
+import {getCollection} from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+
+
+const posts = await getCollection("posts");
+---
+<Layout title="Hot Takes">
+    <div class="blogPage">
+        <div>
+            <h1>Hot Takes Blog</h1>
+        </div>
+    
+    <div class="post-wrapper">
+        <h2>Posts</h2>
+            <div>
+                {posts.map((p) => <PostCard post={p}/> )}
+            </div>
+    </div>
+</div>
+</Layout>

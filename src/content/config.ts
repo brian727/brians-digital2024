@@ -35,13 +35,14 @@ const bylines = defineCollection({
 });
 
 const posts = defineCollection({
-
+    
     schema: z.object({
         title: z.string(),
         tags: z.array(z.string()),
         image: z.string().optional(),
-        bodytext: z.string(),
         description: z.string(),
+        date: z.date(),
+       
       })
 });
 
@@ -53,6 +54,8 @@ export const collections = {
     posts,
 };
   
+
+
 
 
 // Example: A cheatsheet of many common Zod datatypes
