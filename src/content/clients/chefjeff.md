@@ -1,7 +1,7 @@
 ---
-clientName: 'Cheff Jeff'
+clientName: 'Chef Jeff'
 headline: 'Cheff Jeff Headline'
-image: '/img/hartman1.jpg'
+image: '/img/chefjeff.jpg'
 tags: ['astro', 'website']
 ---
 

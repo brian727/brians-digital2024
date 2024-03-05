@@ -1,7 +1,7 @@
 ---
 clientName: 'LHT Photography'
 headline: 'LHT photp'
-image: '/img/hartman1.jpg'
+image: '/img/lhtphoto.jpg'
 tags: ['astro']
 ---
 

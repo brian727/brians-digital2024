@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Client from "../../components/Client.astro";
 import { getCollection, CollectionEntry } from "astro:content";
 
 export async function getStaticPaths(){
@@ -22,9 +23,10 @@ const {Content} = await post.render();
 
 ---
 
-<Layout title="Brians.Digital | Blog">
+<Layout title={post.data.title}>
+  
     <h1>{post.data.title}</h1>
-    <p>{}</p>
+    
     <Content/>
 </Layout>
 

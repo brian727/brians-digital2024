@@ -1,7 +1,7 @@
 ---
 clientName: 'Tucson Body Works'
 headline: 'Tucson Body Works Headline'
-image: '/img/hartman1.jpg'
+image: '/img/bodyworks.jpg'
 tags: ['astro', 'website']
 ---
 

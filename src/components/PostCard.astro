@@ -1,34 +1,26 @@
 ---
-import "../styles/main.css";
-import { type CollectionEntry } from "astro:content";
+
+import { CollectionEntry, getCollection } from "astro:content";
 
 type Props = {
-  post: CollectionEntry<"posts">;
+  posts: CollectionEntry<"posts">[];
 };
 
-const { post } = Astro.props;
-const { title, description } = post.data;
+const { posts } = Astro.props;
 
+const postList = await(getCollection("posts"));
 
 ---
 
-<article class="post-card">
-  <div>
-    <h2>{title}</h2>
-    <!-- <div class="meta">
-      <Image src={authorData.headshot} alt={authorData.name} width="25" />
-      <p>{authorData.name}</p>
-      <span>•</span>
-      <time datetime={date.toISOString()}
-        >{
-          date.toLocaleDateString(undefined, {
-            dateStyle: "medium",
-            timeZone: "UTC",
-          })
-        }</time
-      >
-    </div> -->
-  </div>
-  <p>{description}</p>
-  <a href={`/blog/${post.slug}`} class="btn">Read Post</a>
-</article>
+
+
+    {postList.map((p) => {
+      <article>
+        <img src={`/img/${p.slug}`}/>
+        <h2>{p.data.title}</h2>
+        <p>{p.data.description}</p>
+        <a href={`/posts/${p.slug}`} class="btn">Read Post</a>
+      </article>
+        
+      })}
+

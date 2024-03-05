@@ -1,0 +1,31 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+import Client from "../../components/Client.astro";
+
+export async function getStaticPaths(){
+    const allClients = await getCollection("clients")
+;
+
+return allClients.map((client) => ({
+    params: {slug: client.slug},
+    props: {client},
+}));
+}
+
+interface Props {
+    post: CollectionEntry<"clients">
+}
+
+const {client} = Astro.props;
+
+const {Content} = await client.render();
+
+---
+
+<Layout title="Case Studies | Brians.Digital">
+    
+    <h1>{client.data.title}</h1>
+    <p>{}</p>
+    <Content/>
+</Layout>
