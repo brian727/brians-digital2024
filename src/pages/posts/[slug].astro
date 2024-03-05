@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Client from "../../components/Client.astro";
+import Prose from "../../components/Prose.astro";
 import { getCollection, CollectionEntry } from "astro:content";
 
 export async function getStaticPaths(){
@@ -24,9 +24,24 @@ const {Content} = await post.render();
 ---
 
 <Layout title={post.data.title}>
-  
-    <h1>{post.data.title}</h1>
     
-    <Content/>
+  <section class="h-screen pt-32">
+    <article class="prose">
+        
+        <Content/>
+    </article>
+  </section> 
 </Layout>
 
+<style>
+    section {
+        display: flex;
+        justify-content: center;
+        background-color: azure;
+    }
+
+    article {
+        text-align: center
+    }
+   
+</style>
