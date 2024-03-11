@@ -1,32 +1,30 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection } from "astro:content";
-import PostCard from "../../components/PostCard.astro";
-import Client from "../../components/Client.astro";
+import { getCollection, CollectionEntry } from "astro:content";
 
-import ClientList from "../../components/ClientList.astro";
+const allClients = await getCollection('clients');
 
-const allClients = await getCollection("clients");
-
-export async function getStaticPaths(){
-    const allClients = await getCollection("clients");
+interface Props {
+  client: CollectionEntry<"clients">
 }
+
 ---
 
-<Layout title="Brians.Digital | Client Case Studies" >
-  <div class="bg-blue-500 text-white font-bold px-4 py-2 rounded">
-    Case Studies
-  </div>
+<Layout title="Case Studies">
   
-  
+    <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-stone-50 ">
+      {allClients.map((clients) => 
+        <div class="border border-gray-300 rounded-lg m-10">
+                <img class="rounded-t-lg" src={clients.data.image}/>
+                <h2 class="prose-base text-black text-3xl p-4">{clients.data.clientName}</h2>
+                <p class="prose-base text-black px-3 pb-2">{clients.data.headline}</p>
+                <button type="button" class="m-2 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    <a href={`clients/${clients.slug}`}>Read More</a>
+                </button>
+            </div>
+      )}
+    </div>
 
-  <div class="clientList-wrapper">
-    <ClientList clients={allClients} />
-  </div>
 </Layout>
-<style>
-  .clientList-wrapper{
-    background-color: white;
-  }  
-  </style>
+
 

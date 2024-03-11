@@ -1,0 +1,32 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, CollectionEntry } from "astro:content";
+
+
+export async function getStaticPaths(){
+    const allBylines = await getCollection("bylines")
+;
+
+return allBylines.map((byline) => ({
+    params: {slug: byline.slug},
+    props: {byline},
+}));
+}
+
+interface Props {
+    byline: CollectionEntry<"bylines">
+}
+
+const {byline} = Astro.props;
+
+const {Content} = await byline.render();
+---
+
+<Layout title="Bylines">
+    <section class="flex justify-center bg-slate-500">
+        <article class="prose">
+            <a href={byline.data.url}>Direct Link to published article</a>
+            <Content/>
+        </article>
+    </section>
+</Layout>

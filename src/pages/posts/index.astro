@@ -1,49 +1,32 @@
 ---
 import { CollectionEntry, getCollection } from 'astro:content';
 import Layout from "../../layouts/Layout.astro";
-import PostCard from "../../components/PostCard.astro";
-import BlogCard from "../../components/BlogCard.astro";
 
-export async function getStaticPaths(){
-    const posts = await getCollection('posts');
-    }
 const allPosts = await getCollection('posts');
-
 
 interface Props {
     post: CollectionEntry<"posts">
-
 }
-const {posts} = Astro.props;
 
 ---
 
 <Layout title="Blog">
-    <section>
+    <section class="bg-stone-50">
         <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {allPosts.map((posts) => 
             <div class="border border-gray-300 rounded-lg m-10">
-                <img src={posts.data.image}/>
-                <h2 class="prose-base text-3xl p-4">{posts.data.title}</h2>
+                <img class="rounded-t-lg" src={posts.data.image}/>
+                <h2 class="prose-base text-black text-3xl p-4">{posts.data.title}</h2>
                 <p class="prose-base text-black px-3 pb-2">{posts.data.description}</p>
                 <button type="button" class="m-2 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                     <a href={`posts/${posts.slug}`}>Read More</a>
                 </button>
-       
-                
             </div>
         )}
         </div>
     </section>
 </Layout>
-<style>
-    h2 {
-        color: black;
-    }
-    section {
-        background-color: azure;
-    }
-</style>   
+ 
 
 
  

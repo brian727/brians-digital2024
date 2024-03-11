@@ -31,7 +31,11 @@ const bylines = defineCollection({
         title: z.string(),
         tags: z.array(z.string()),
         image: z.string().optional(),
-      })
+        summary: z.string(),
+        publisher: z.string(),
+        url: z.string().optional(),
+    })
+        
 });
 
 const posts = defineCollection({
@@ -48,10 +52,11 @@ const posts = defineCollection({
 
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
-    clients,
-    projects,
-    bylines,
-    posts,
+    'clients': clients,
+    'projects': projects,
+    'bylines': bylines,
+    'posts': posts,
+    
 };
   
 
