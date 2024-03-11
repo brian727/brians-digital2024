@@ -5,7 +5,15 @@ module.exports = {
 		'./node_modules/flowbite/**/*.js'
 	],
 	theme: {
-		extend: {},
+		extend: {
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: '100',
+					}
+				}
+			}
+		},
 	},
 	plugins: [
 		require('@tailwindcss/typography'),

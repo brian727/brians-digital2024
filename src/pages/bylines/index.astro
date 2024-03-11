@@ -10,14 +10,45 @@ interface Props {
 
 ---
 <Layout title="Published Bylines">
-
-  <section class=" bg-red-200 mx-auto h-screen">
-    <div class="">
-      {allBylines.map((bylines) => 
-        <h1 class="font-bold text-xl text-black text-center max-w-none">{bylines.data.title}</h1>
-        )}
+  <section class="flex h-full">
+    <div class="w-1/4 bg-slate-200 mt-14">
+      <ul class="prose bg-slate-00 text-center">
+        <h3 class="prose">Filter by Publisher</h3>
+        <li><a href="#">Top Class Actions</a></li>
+        <li><a href="#">The Daily Beast</a></li>
+        <li><a href="#">The Tucson Weekly</a></li>
+        <li><a href="#">TucsonNewsNow.com</a></li>
+        <li><a href="#">KVOA.com</a></li>
+        <li><a href="#">KFMB.com</a></li>
+        <li><a href="#">Patch.com</a></li>
+      </ul>
     </div>
+
+      <div class="w-3/4 bg-slate-300 p-12">
+        {allBylines.map((bylines) => 
+          <span class="max-w-none prose"><h2>{bylines.data.title}</h2></span>
+          <span class=" uppercase text-red-700 font-bold">{bylines.data.tags}</span>
+          <span><p class="prose">{bylines.data.summary}</p></span>
+          <hr class="mt-9 border-red-700">
+        )}
+      </div>
+   
+  
+    
   </section>
+
+  <!-- <section class=" bg-slate-100 h-full ">
+    <ul>
+      {allBylines.map((bylines) => 
+        
+          <li class="prose grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+            <h2 class=" max-w-none">{bylines.data.title}</h1>
+          </li>
+        
+    
+        )}
+    </ul>
+  </section> -->
  
   <!-- <section class="text-gray-600 bg-white body-font overflow-hidden ">
     <div class="container px-5 py-24 mx-auto">
