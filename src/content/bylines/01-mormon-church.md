@@ -1,6 +1,6 @@
 ---
 title: "Is Mormon Abuse Covered Up by the Church?"
-tags: ['TCA, ', 'Legal News']
+tags: ['top class actions', 'Legal News']
 image: /img/hartman.jpg
 summary: "Two Mormon bishops in Arizona are facing a lawsuit alleging that they and the Mormon church failed to report sexual abuse incidents despite being told — justifying the cover-ups by citing religious privilege."
 publisher: "Top Class Actions"

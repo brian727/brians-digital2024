@@ -1,6 +1,6 @@
 ---
 title: "'Roaring Kitty' Named in GameStop Short Squeeze Class Action"
-tags: ['TCA, ', 'Legal News']
+tags: ['top class actions', 'Legal News']
 image: /img/hartman.jpg
 summary: "Lead plaintiff Christian Iovin says Keith Gill, more widely known as “Roaring Kitty” on YouTube, is actually an institutional trader hiding behind everyday guy personas on social media."
 publisher: "Top Class Actions"

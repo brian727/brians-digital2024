@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+    const allBylines = await Astro.glob('../../content/bylines/*md');
+
+    return [
+        { params: {tag: "the-daily-beast"}, props: {bylines: allBylines}},
+        { params: {tag: "kold-cbs"}, props: {bylines: allBylines}},
+        { params: {tag: "kvoa-nbc"}, props: {bylines: allBylines}},
+        { params: {tag: "kgun-abc"}, props: {bylines: allBylines}},
+        { params: {tag: "top-class-actions"}, props: {bylines: allBylines}},
+        { params: {tag: "patch"}, props: {bylines: allBylines}},
+        { params: {tag: "tucson-weekly"}, props: {bylines: allBylines}},
+    ]
+}
+
+const { tag } = Astro.params;
+const { bylines } = Astro.props;
+const filteredBylines = bylines.filter((bylines) => bylines.frontmatter.tags?.includes(tag));
+---
+
+
+
+<Layout title={tag}>
+    <div class="h-full bg-slate-200"></div>
+    <p>Published in {tag}</p>
+    <ul>
+        {filteredBylines.map((byline) => {
+        <li>
+            {byline.frontmatter.title}
+        </li>
+           
+    })}
+    </ul>
+</Layout>
