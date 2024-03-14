@@ -1,6 +1,7 @@
 ---
 title: "Giffords shooting suspect had trouble at PCC"
-tags: ['kold cbs', 'News']
+tags:
+    - KOLD CBS
 image: /img/hartman.jpg
 summary: "Pima Community College says the accused gunman in a shooting that killed six people and wounded Congresswoman Gabrielle Giffords was a former PCC student who voluntarily withdrew last October after he was suspended for code of conduct violations."
 publisher: "KOLD.com"

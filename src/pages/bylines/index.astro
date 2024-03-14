@@ -1,28 +1,51 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection, CollectionEntry } from "astro:content";
+import BylineCard from "../../components/BylineCard.astro";
+import Tags from '../../components/Tags.astro';
 
 const allBylines = await getCollection('bylines');
-const allBylinesGlob = await Astro.glob('../../content/bylines/*.md');
 
-interface Props {
-  client: CollectionEntry<"bylines">
-}
 
 ---
 <Layout title="Published Bylines">
+  <section class="flex h-full bg-slate-100">
+    <div class="prose mt-12 flex flex-col gap-5 px-5 sm:-mx-5 lg:px-4">
+      {
+        allBylines.map(({data, slug}) => {
+          const url = `/bylines/${slug}`;
+
+          return (
+            <BylineCard 
+              title={data.title} 
+              tags={data.tags} 
+              image=[{data.image}] 
+              summary={data.summary}>
+            </BylineCard>
+          );
+
+        })
+      }
+    </div>
+  </section>
   <section class="flex h-full">
     <div class="w-1/4 bg-slate-100 py-24">
       <ul class="prose bg-slate-00 text-center">
         <h3 class="">Filter by Publisher</h3>
+          {allBylines.map((byline) => 
+           <li>
+            {byline.data.tags}
+          </li>
+          )}
+        
           
-        <li><a href="#">Top Class Actions</a></li>
+        <!-- <li><a href="#">Top Class Actions</a></li>
         <li><a href="#">The Daily Beast</a></li>
         <li><a href="#">The Tucson Weekly</a></li>
         <li><a href="#">TucsonNewsNow.com</a></li>
         <li><a href="#">KVOA.com</a></li>
         <li><a href="#">KFMB.com</a></li>
-        <li><a href="#">Patch.com</a></li>
+        <li><a href="#">Patch.com</a></li> -->
       </ul>
     </div>
 

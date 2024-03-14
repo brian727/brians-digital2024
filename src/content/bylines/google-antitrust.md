@@ -1,6 +1,7 @@
 ---
 title: "Google, Facebook, Amazon Antitrust Lawsuit Targets Digital Ads"
-tags: ['top class actions', 'Legal News']
+tags:
+    - Top Class Actions
 image: /img/hartman.jpg
 summary: "A Kansas landscaping company is leading the charge in the latest class action lawsuit arguing major internet companies are choking the competition over digital ad space with unfair monopolies over the systems that serve them. "
 publisher: "Top Class Actions"

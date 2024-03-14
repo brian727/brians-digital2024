@@ -1,6 +1,7 @@
 ---
 title: "Arizona reactions over Douglas rancher's murder"
-tags: ['kold cbs', 'News']
+tags:
+    - KOLD CBS
 image: /img/hartman.jpg
 summary: "It wasn't until Krentz failed to meet his brother at noon when he knew something was wrong. He began to search the ranch for his brother with the help of his family."
 publisher: "KOLD.com"

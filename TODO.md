@@ -28,10 +28,6 @@
 
 ## KGUN
 
--[https://www.kgun9.com/news/local-news/city-begins-dismantling-homeless-camp-near-santa-rita-park]
-
--[https://www.kgun9.com/news/local-news/riding-as-therapy-for-tucson-trotters]
-
 -[https://www.kgun9.com/news/local-news/ua-research-team-explores-ancient-mayan-temples-from-the-air]
 
 -[https://www.kgun9.com/news/local-news/pantano-churchs-free-red-for-ed-camp]
