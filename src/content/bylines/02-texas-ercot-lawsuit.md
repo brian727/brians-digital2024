@@ -1,7 +1,6 @@
 ---
 title: "Texas Power Company, ERCOT Hit With $10M Lawsuit Over Outages"
-tags:
-    - Top Class Actions
+tag: 'tca'
 image: /img/hartman.jpg
 summary: "A Houston-area couple has filed the first lawsuit against the Electric Reliability Council of Texas (ERCOT) and CenterPoint Energy, asserting its negligence in failing to prepare for the winter storm that left millions without power and nearly 80 dead."
 publisher: "Top Class Actions"

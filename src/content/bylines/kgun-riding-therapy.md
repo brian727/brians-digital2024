@@ -1,7 +1,6 @@
 ---
 title: "Riding as therapy for Tucson trotters"
-tags:
-    - KGUN ABC
+tag: 'kgun'
 image: /img/hartman.jpg
 summary: "The findings showed 70 percent of children with autism who rode with horses reached 70 percent of their target behaviors."
 url: "https://www.kgun9.com/news/local-news/riding-as-therapy-for-tucson-trotters"

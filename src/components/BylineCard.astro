@@ -8,12 +8,19 @@ export type Props = {
     image: string;
 };
 ---
-<a href="#" class="card">
+<a href="/bylines" class="card bg-slate-400">
     <div class="card__inner">
-        <div class="card__title">{title}</div>
-        <div class="card__title">{image}</div>
-        <div class="card__title">{summary}</div>
-        <div class="card__title">{tags}</div>
+        <div class="card__title">
+            {title}
+        </div>
+        <div class="inner">
+            {image}
+            
+        </div>
+        {summary}
+        <br>
+        {tags}
+     
         <!-- Render the arrow via HTML entity -->
         <div class="card__footer">&rarr;</div>
     </div>

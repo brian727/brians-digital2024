@@ -1,6 +1,6 @@
 ---
 title: "Polls Close and Americans Brace for the Worst on a Pandemic Election Day"
-tags: ['The Daily Beast']
+tag: 'The Daily Beast'
 image: /img/hartman.jpg
 summary: "A nation battered by the coronavirus pandemic trudged to the polls on Tuesday with an eerie sense, ultimately vindicated, that no matter how they felt or what they hoped, the United States would finish Election Day without much confidence in the name of its next president."
 publisher: "The Daily Beast"

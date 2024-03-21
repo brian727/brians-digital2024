@@ -1,6 +1,6 @@
 
 // 1. Import utilities from `astro:content`
-import { defineCollection, z, type CollectionEntry } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
 
 // 2. Define a `type` and `schema` for each collection
 const clients = defineCollection({
@@ -9,7 +9,8 @@ const clients = defineCollection({
         clientName: z.string(),
         headline: z.string(),
         image: z.string().optional(),
-        tags: z.array(z.string()),
+        
+
         })
     });
 
@@ -21,19 +22,19 @@ const projects = defineCollection({
 		intro: z.string().optional(),
 		thumbnail: z.string(),
 		og_image: z.string().optional(),
-		tag: z.array(z.string()).optional(),
+        tag: z.array(z.string()),
+        tech: z.enum(["JavaScript", "Astro", "WordPress"])
       })
     });
 
 const bylines = defineCollection({
-
+    
     schema: z.object({
         title: z.string(),
-        tags: z.array(z.string()).default([]),
-        image: z.string().optional(),
+        image: z.string(),
         summary: z.string(),
-        url: z.string().optional(),
-      
+        url: z.string(),
+        tag: z.string(),
     })
         
 });
@@ -52,10 +53,10 @@ const posts = defineCollection({
 
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
-    'clients': clients,
-    'projects': projects,
-    'bylines': bylines,
-    'posts': posts,
+    clients: clients,
+    projects: projects,
+    bylines: bylines,
+    posts: posts,
     
 };
   

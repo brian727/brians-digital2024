@@ -1,115 +1,36 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection, CollectionEntry } from "astro:content";
-import BylineCard from "../../components/BylineCard.astro";
-import Tags from '../../components/Tags.astro';
+import { getCollection } from "astro:content";
 
-const allBylines = await getCollection('bylines');
-
-
+const allBylines = await getCollection("bylines");
 ---
 <Layout title="Published Bylines">
-  <section class="flex h-full bg-slate-100">
-    <div class="prose mt-12 flex flex-col gap-5 px-5 sm:-mx-5 lg:px-4">
-      {
-        allBylines.map(({data, slug}) => {
-          const url = `/bylines/${slug}`;
-
-          return (
-            <BylineCard 
-              title={data.title} 
-              tags={data.tags} 
-              image=[{data.image}] 
-              summary={data.summary}>
-            </BylineCard>
-          );
-
-        })
-      }
-    </div>
-  </section>
   <section class="flex h-full">
+
     <div class="w-1/4 bg-slate-100 py-24">
       <ul class="prose bg-slate-00 text-center">
         <h3 class="">Filter by Publisher</h3>
-          {allBylines.map((byline) => 
-           <li>
-            {byline.data.tags}
-          </li>
-          )}
-        
-          
-        <!-- <li><a href="#">Top Class Actions</a></li>
-        <li><a href="#">The Daily Beast</a></li>
-        <li><a href="#">The Tucson Weekly</a></li>
-        <li><a href="#">TucsonNewsNow.com</a></li>
-        <li><a href="#">KVOA.com</a></li>
-        <li><a href="#">KFMB.com</a></li>
-        <li><a href="#">Patch.com</a></li> -->
+          <li><a href="/tags/tca">Top Class Actions</a></li>
+          <li><a href="/tags/patch">Patch.com</a></li>
+          <li><a href="/tags/kgun">KGUN ABC</a></li>
+          <li><a href="/tags/kfmb">KFMB CBS</a></li>
+          <li><a href="/tags/kvoa">KVOA NBC</a></li>
+          <li><a href="/tags/kold">KOLD CBS</a></li>
       </ul>
     </div>
 
-      <div class="w-3/4 bg-slate-300 p-12">
-        <ul class="">
-          {allBylines.map((byline) => 
-          
-          <article>
-            <li class="prose">
-              <a href={`bylines/${byline.slug}`}>
-                <h2>{byline.data.title}</h2>
-              </a>
-                <span class="font-bold uppercase text-red-900 text-xs">{byline.data.tags}</span>
-                <p class="prose">{byline.data.summary}</p>
-                <hr class="my-9 border-red-700">
-              </li>
-              </article>
-          
+    <div class="w-3/4 bg-slate-300 p-12">
+        {allBylines.map(byline => 
+            <h2 class="prose">
+              <a href={`bylines/${byline.slug}`}>{byline.data.title}</a>
+            </h2>
+            <span class="prose font-bold uppercase text-red-900 text-xs">{byline.data.tag}</span>
+            <p class="prose">{byline.data.summary}</p>
+            <hr class="my-9 border-red-700">
         )}
-        </ul>
-        
-    
-      </div>
-   
-  
-    
-  </section>
-
-  <!-- <section class=" bg-slate-100 h-full ">
-    <ul>
-      {allBylines.map((bylines) => 
-        
-          <li class="prose grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
-            <h2 class=" max-w-none">{bylines.data.title}</h1>
-          </li>
-        
-    
-        )}
-    </ul>
-  </section> -->
- 
-  <!-- <section class="text-gray-600 bg-white body-font overflow-hidden ">
-    <div class="container px-5 py-24 mx-auto">
-      <div class="my-8 divide-y-2 divide-gray-100">
-        {allBylines.map((bylines) => 
-          <div class="py-8 flex flex-nowrap md:flex-nowrap ">
-            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-              <span class="font-semibold title-font text-gray-700">{bylines.data.tags}</span>
-              <span class="mt-1 text-gray-500 text-sm">Feb. 18, 2021</span>
-              <span><a href={`/bylines/${bylines.slug}`}>Direct Link</a></span>
-          </div>
-          <div class="">
-            <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">{bylines.data.title}</h2>
-            <p class="leading-relaxed">{bylines.data.summary}</p>
-            
-          </div>
-        </div>
-        )}
-      </div>
+      </ul>
     </div>
-  </section> -->
-
-  
-
+  </section>
 </Layout>
   
       
