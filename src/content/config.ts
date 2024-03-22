@@ -34,7 +34,7 @@ const bylines = defineCollection({
         image: z.string(),
         summary: z.string(),
         url: z.string(),
-        tag: z.string(),
+        tag: z.array(z.string()),
     })
         
 });

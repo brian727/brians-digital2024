@@ -1,6 +1,6 @@
 ---
 title: "UA research team explores Mayan settlements"
-tag: 'kgun'
+tag: ["kgun"]
 image: /img/hartman.jpg
 summary: "A team of researchers at the University of Arizona are exploring ancient Mayan settlements in ways never done before."
 url: "https://www.kgun9.com/news/local-news/ua-research-team-explores-ancient-mayan-temples-from-the-air"

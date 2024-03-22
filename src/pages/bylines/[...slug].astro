@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const bylineEntries = await getCollection('bylines');
+    return bylineEntries.map(entry => ({
+        params: {slug: entry.slug}, props: {entry},
+    }));
+} 
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+    <div class="prose bg-slate-200">
+        <h1 class="">{entry.data.title}</h1>
+        <a href={entry.data.url}>Link to original article as published</a>
+        <Content />
+    </div>
+    
+</Layout>

@@ -1,6 +1,6 @@
 ---
 title: "Have you checked your black Friday receipts for credit card details?"
-tag: 'tca'
+tag: ["tca"]
 image: /img/hartman.jpg
 summary: "The notion thieves could use paper receipts to reconstitute entire identities had lawmakers taking moves to stop it."
 publisher: "Top Class Actions"

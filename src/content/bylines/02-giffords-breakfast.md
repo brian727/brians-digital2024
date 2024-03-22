@@ -1,6 +1,6 @@
 ---
 title: "Rep. Giffords' husband shares thoughts during National Prayer Breakfast"
-tag: 'kold'
+tag: ["kold"]
 image: /img/hartman.jpg
 summary: "Rep. Giffords' husband shares thoughts during National Prayer Breakfast"
 publisher: "KOLD.com"

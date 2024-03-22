@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const allBylines = await Astro.glob('../../content/bylines/*.md');
+const bylineTags = [...new Set(allBylines.map((byline) => byline.frontmatter.tag).flat())];
+---
+
+<Layout title="Tag Index">
+    <div class="prose h-screen bg-slate-200">
+        {bylineTags.map((tag) => 
+            <h2 class="prose">
+                <a href={`/tags/${tag}`}>{tag}</a>
+            </h2>
+        )}
+    </div>
+</Layout>

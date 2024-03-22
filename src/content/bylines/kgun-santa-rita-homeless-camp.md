@@ -1,6 +1,6 @@
 ---
 title: "City serves notice to vacate on homeless camp near Santa Rita park"
-tag: 'kgun'
+tag: ["kgun"]
 image: /img/hartman.jpg
 summary: "The empty, privately-held lot known as Camp Bravo has become a refuge for the less fortunate for three years now."
 url: "https://www.kgun9.com/news/local-news/city-begins-dismantling-homeless-camp-near-santa-rita-park"

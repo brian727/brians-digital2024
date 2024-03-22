@@ -1,6 +1,6 @@
 ---
 title: "Looking Back, Looking Forward: HIV/AIDS in Pima County: 30 years after ‘The Plague’"
-tag: 'tca'
+tag: ["tucson-weekly"]
 image: /img/hartman.jpg
 summary: "While medical advances have improved lives, a stigma surrounding the virus persists and there remains a large amount of people in Southern Arizona who aren't getting the proper care they need."
 publisher: "Tucson Weekly"
