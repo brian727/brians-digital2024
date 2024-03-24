@@ -4,8 +4,10 @@ import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
     const bylineEntries = await getCollection('bylines');
+
     return bylineEntries.map(entry => ({
-        params: {slug: entry.slug}, props: {entry},
+        params: {slug: entry.slug}, 
+        props: {entry},
     }));
 } 
 

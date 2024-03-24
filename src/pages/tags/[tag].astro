@@ -1,18 +1,21 @@
 ---
-function getEntry(arg0: string, tag: any) {
-throw new Error('Function not implemented.');
-}
+import Layout from '../../layouts/Layout.astro';
 
 import { getCollection, CollectionEntry } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
 
 
 
 export async function getStaticPaths() {
+    const taggedBylines = await getCollection('bylines', ({data}) =>{
+        return data.tag === data.tag;
+    });
     
     const allBylines = await Astro.glob('../../content/bylines/*.md');
     return [
-        {params: {tag: "tca"}, props: {bylines: allBylines}},
+        {params: 
+            {tag: "tca"}, 
+            props: {bylines: allBylines}},
+        
         {params: {tag: "daily-beast"}, props: {bylines: allBylines}},
         {params: {tag: "kgun"}, props: {bylines: allBylines}},
         {params: {tag: "kfmb"}, props: {bylines: allBylines}},
@@ -25,8 +28,7 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { bylines } = Astro.props;
-const filtBys = bylines.filter((bylines) => bylines.frontmatter.tags?.includes(tag));
-
+const filtBys = bylines.filter((bylines) => bylines.frontmatter.tag?.includes(tag));
 
 ---
 
@@ -35,9 +37,9 @@ const filtBys = bylines.filter((bylines) => bylines.frontmatter.tags?.includes(t
         <h1>Published in {tag}</h1>
         
         <ul>
-            {filtBys.map((byline) => 
+            {filtBys.map((bylines) => 
                 <li>
-                    <a href="">{byline.data.title}</a>
+                    <a href="">{bylines.frontmatter.title}</a>
                 </li>
             )}
         </ul>
