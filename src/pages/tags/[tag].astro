@@ -1,16 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-
-import { getCollection, CollectionEntry } from 'astro:content';
-
-
+import { getCollection, getEntries } from 'astro:content';
 
 export async function getStaticPaths() {
-    const taggedBylines = await getCollection('bylines', ({data}) =>{
-        return data.tag === data.tag;
-    });
     
-    const allBylines = await Astro.glob('../../content/bylines/*.md');
+    const allBylines = await getCollection("bylines");
     return [
         {params: 
             {tag: "tca"}, 
@@ -28,22 +22,44 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { bylines } = Astro.props;
-const filtBys = bylines.filter((bylines) => bylines.frontmatter.tag?.includes(tag));
+const filtBys = bylines.filter((bylines) => bylines.data.tag?.includes(tag));
 
 ---
 
 <Layout title="Byline by Publisher">
-    <div class="prose bg-slate-200">
-        <h1>Published in {tag}</h1>
+    <section class="flex h-full">
+        <div class="w-1/4 bg-slate-100 py-24">
+            <ul class="prose text-center">
+              <h3 class="">Filter by Publisher</h3>
+                <li><a href="/tags/tca">Top Class Actions</a></li>
+                <li><a href="/tags/patch">Patch.com</a></li>
+                <li><a href="/tags/kgun">KGUN ABC</a></li>
+                <li><a href="/tags/kfmb">KFMB CBS</a></li>
+                <li><a href="/tags/kvoa">KVOA NBC</a></li>
+                <li><a href="/tags/kold">KOLD CBS</a></li>
+            </ul>
+        </div>
+        <div class="prose w-3/4 bg-slate-300 p-12">
+            <h1>Published in {tag}</h1>
+            
+                {filtBys.map((bylines) => 
+                    <h2 class="prose">
+                        <a href=`/bylines/${bylines.slug}`>
+                            {bylines.data.title}
+                        </a>
+                    </h2>
+                    <p class="prose">{bylines.data.summary}</p>
+                    <hr class="my-9 border-red-700">
+                )}
+        </div>
+    </section>
+    
         
-        <ul>
-            {filtBys.map((bylines) => 
-                <li>
-                    <a href="">{bylines.frontmatter.title}</a>
-                </li>
-            )}
-        </ul>
-    </div>
+        
+        
+        
+        
+    
   
 
 </Layout>
