@@ -1,25 +1,21 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection, CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import Client from "../../components/Client.astro";
 
 export async function getStaticPaths(){
-    const allClients = await getCollection("clients")
+    const clientEntries = await getCollection("clients")
 ;
 
-return allClients.map((client) => ({
-    params: {slug: client.slug},
-    props: {client},
+return clientEntries.map((entry) => ({
+    params: {slug: entry.slug},
+    props: {entry},
 }));
 }
 
-interface Props {
-    post: CollectionEntry<"clients">
-}
+const {entry} = Astro.props;
 
-const {client} = Astro.props;
-
-const {Content} = await client.render();
+const {Content} = await entry.render();
 
 ---
 

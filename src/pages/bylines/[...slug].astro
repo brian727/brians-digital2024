@@ -16,10 +16,24 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-    <div class="prose bg-slate-200">
-        <h1 class="">{entry.data.title}</h1>
-        <a href={entry.data.url}>Link to original article as published</a>
-        <Content />
-    </div>
+    <section class="flex h-full">
+        <div class="w-1/4 bg-slate-100 py-24">
+            <ul class="prose bg-slate-100 text-center">
+                <h3 class="">Filter by Publisher</h3>
+                  <li><a href="/tags/tca">Top Class Actions</a></li>
+                  <li><a href="/tags/patch">Patch.com</a></li>
+                  <li><a href="/tags/kgun">KGUN ABC</a></li>
+                  <li><a href="/tags/kfmb">KFMB CBS</a></li>
+                  <li><a href="/tags/kvoa">KVOA NBC</a></li>
+                  <li><a href="/tags/kold">KOLD CBS</a></li>
+              </ul> 
+        </div>
+        <div class="w-3/4 prose bg-slate-100 py-12">
+            
+            <a href={entry.data.url}>Link to original article as published</a>
+            <Content />
+        </div>
+    </section>
+    
     
 </Layout>

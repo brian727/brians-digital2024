@@ -13,7 +13,7 @@ const allBylines = await getCollection("bylines");
   <section class="flex h-full">
 
     <div class="w-1/4 bg-slate-100 py-24">
-      <ul class="prose bg-slate-200 text-center">
+      <ul class="prose bg-slate-100 text-center">
         <h3 class="">Filter by Publisher</h3>
           <li><a href="/tags/tca">Top Class Actions</a></li>
           <li><a href="/tags/patch">Patch.com</a></li>
@@ -24,12 +24,12 @@ const allBylines = await getCollection("bylines");
       </ul>
     </div>
 
-    <div class="w-3/4 bg-slate-300 p-12">
+    <div class="prose w-3/4 bg-slate-100 p-12">
         {allBylines.map(byline => 
             <h2 class="prose">
               <a href={`/bylines/${byline.slug}`}>{byline.data.title}</a>
             </h2>
-            <span class="prose font-bold uppercase text-red-900 text-xs">{byline.data.tag}</span>
+            <span class=" font-bold uppercase text-red-900 text-xs">{byline.data.tag}</span>
             <p class="prose">{byline.data.summary}</p>
             <hr class="my-9 border-red-700">
         )}
