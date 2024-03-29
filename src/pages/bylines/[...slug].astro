@@ -16,7 +16,7 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-    <section class="flex h-full">
+    <section class="flex h-full bg-slate-100">
         <div class="w-1/4 bg-slate-100 py-24">
             <ul class="prose bg-slate-100 text-center">
                 <h3 class="">Filter by Publisher</h3>
@@ -28,12 +28,31 @@ const { Content } = await entry.render();
                   <li><a href="/tags/kold">KOLD CBS</a></li>
               </ul> 
         </div>
-        <div class="w-3/4 prose bg-slate-100 py-12">
-            
-            <a href={entry.data.url}>Link to original article as published</a>
+        <div class="content w-3/4 prose bg-slate-100 py-12">
             <Content />
         </div>
     </section>
-    
+    <div class="footer prose h-full bg-slate-100">
+        <a href={entry.data.url}>Link to original article as published</a>
+    </div>
+        
     
 </Layout>
+
+<style>
+    .content {
+        max-height: 75vh;
+        overflow: hidden;
+    }
+
+    .footer {
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+        margin: 0;
+        padding: 30px 0;
+        background-image: linear-gradient(to bottom, transparent, lightgray);
+       }
+
+  
+</style>
