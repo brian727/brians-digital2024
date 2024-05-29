@@ -16,24 +16,27 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-    <section class="flex h-full bg-slate-100">
+    <section class="flex bg-slate-100">
         <div class="w-1/4 bg-slate-100 py-24">
-            <ul class="prose bg-slate-100 text-center">
+            <ul class="prose bg-slate-100 text-left pl-10">
                 <h3 class="">Filter by Publisher</h3>
+                  <li><a href="/tags/daily-beast">Daily Beast</a></li>
+                  <li><a href="/tags/tucson-weekly">Tucson Weekly</a></li>
                   <li><a href="/tags/tca">Top Class Actions</a></li>
                   <li><a href="/tags/patch">Patch.com</a></li>
                   <li><a href="/tags/kgun">KGUN ABC</a></li>
-                  <li><a href="/tags/kfmb">KFMB CBS</a></li>
-                  <li><a href="/tags/kvoa">KVOA NBC</a></li>
-                  <li><a href="/tags/kold">KOLD CBS</a></li>
+                  <li><a href="/tags/kvoa">KVOA.com NBC</a></li>
+                  <li><a href="/tags/kold">TucsonNewsNow.com CBS</a></li>
               </ul> 
         </div>
+        
         <div class="content w-3/4 prose bg-slate-100 py-12">
             <Content />
         </div>
+        
     </section>
     <div class="footer prose h-full bg-slate-100">
-        <a href={entry.data.url}>Link to original article as published</a>
+            <a href={entry.data.url}>Link to original article as published</a>
     </div>
         
     
@@ -50,7 +53,7 @@ const { Content } = await entry.render();
         bottom: 0;
         text-align: center;
         margin: 0;
-        padding: 30px 0;
+        padding: 30px;
         background-image: linear-gradient(to bottom, transparent, lightgray);
        }
 

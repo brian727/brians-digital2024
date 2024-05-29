@@ -6,6 +6,7 @@ summary: "It wasn't until Krentz failed to meet his brother at noon when he knew
 publisher: "KOLD.com"
 url: "https://www.kold.com/story/12224521/arizona-reacts-to-murder-of-douglas-rancher/"
 ---
+## Arizona reactions over Douglas rancher's murder
 
 When Robert Krentz radioed his brother late Saturday morning on the two-way, all he heard was "illegal alien" and "hurt".
 

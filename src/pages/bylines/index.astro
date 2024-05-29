@@ -1,41 +1,85 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-
-
 const allBylines = await getCollection("bylines");
 
-
-
-
 ---
+
 <Layout title="Published Bylines">
-  <section class="flex h-full">
-
-    <div class="w-1/4 bg-slate-100 py-24">
-      <ul class="prose bg-slate-100 text-center">
-        <h3 class="">Filter by Publisher</h3>
-          <li><a href="/tags/tca">Top Class Actions</a></li>
-          <li><a href="/tags/patch">Patch.com</a></li>
-          <li><a href="/tags/kgun">KGUN ABC</a></li>
-          <li><a href="/tags/kfmb">KFMB CBS</a></li>
-          <li><a href="/tags/kvoa">KVOA NBC</a></li>
-          <li><a href="/tags/kold">KOLD CBS</a></li>
-      </ul>
-    </div>
-
-    <div class="prose w-3/4 bg-slate-100 p-12">
-        {allBylines.map(byline => 
-            <h2 class="prose">
-              <a href={`/bylines/${byline.slug}`}>{byline.data.title}</a>
-            </h2>
-            <span class=" font-bold uppercase text-red-900 text-xs">{byline.data.tag}</span>
-            <p class="prose">{byline.data.summary}</p>
-            <hr class="my-9 border-red-700">
-        )}
-      </ul>
-    </div>
+  <section class="bg-slate-100">
+    <div class="container mx-auto flex ">
+      <div class=" bg-slate-100 p-12 container m-auto grid gap-4 xlg:grid-cols-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">  
+        <div class="col-span-full text-center">
+          <h1 class="prose">Published Work</h1>
+          <p class="prose">Collection of bylines I've written.</p>
+        </div>
+       
+        <div class="inline-flex rounded-md shadow-sm col-span-full justify-center">
+          
+          <a href="/tags/daily-beast" aria-current="page" class="px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+            Daily Beast
+          </a>
+          <a href="/tags/tucson-weekly" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+            Tucson Weekly
+          </a>
+          <a href="/tags/tca" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+            Top Class Actions
+          </a>
+          <a href="/tags/patch" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+            Patch.com
+          </a>
+          <a href="/tags/kgun" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+            KGUN.com ABC
+          </a>
+          <a href="/tags/kvoa" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+            KVOA.com NBC
+          </a>
+          <a href="/tags/kold" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white">
+            TucsonNewsNow.com CBS
+          </a>
+        </div>
+          {allBylines.map(byline => 
+              <a href={`/bylines/${byline.slug}`} class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{byline.data.title}</h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">{byline.data.summary}</p>
+              </a>
+          )}
+      </div>
   </section>
+
+
+<section>
+  <div class="container m-auto grid gap-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+    <div class=" col-span-full">
+      <h1 class="">Published Work</h1>
+    </div>
+    <div class="tile bg-amber-500">
+      <h1 class="tile-marker">TWO</h1>
+    </div>
+    <div class="tile bg-yellow-500">
+      <h1 class="tile-marker">THREE</h1>
+    </div>
+    <div class="tile bg-lime-600">
+      <h1 class="tile-marker">FOUR</h1>
+    </div>
+    <div class="tile bg-green-600">
+      <h1 class="tile-marker">FIVE</h1>
+    </div>
+    <div class="tile bg-emerald-500">
+      <h1 class="tile-marker">SIX</h1>
+    </div>
+    <div class="tile bg-teal-500">
+      <h1 class="tile-marker">SEVEN</h1>
+    </div>
+    <div class="tile bg-purple-500">
+      <h1 class="tile-marker">EIGHT</h1>
+    </div>
+    <div class="tile bg-pink-500">
+      <h1 class="tile-marker">NINE</h1>
+    </div>
+  </div>
+  
+</section>
 </Layout>
   
       
@@ -45,4 +89,12 @@ const allBylines = await getCollection("bylines");
       <path d="M5 12h14"></path>
       <path d="M12 5l7 7-7 7"></path>
     </svg> 
+
+
+    <h2 class="prose">
+                <a href={`/bylines/${byline.slug}`}>{byline.data.title}</a>
+              </h2>
+              <span class=" font-bold uppercase text-red-900 text-xs">{byline.data.tag}</span>
+              <p class="prose">{byline.data.summary}</p>
+              <hr class="my-9 border-red-700">
 -->

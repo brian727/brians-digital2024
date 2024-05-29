@@ -12,22 +12,32 @@ interface Props {
 ---
 
 <Layout title="Blog">
-    <section class="bg-stone-50">
-        <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {allPosts.map((posts) => 
-            <div class="border border-gray-300 rounded-lg m-10">
-                <img class="rounded-t-lg" src={posts.data.image}/>
-                <h2 class="prose-base text-black text-3xl p-4">{posts.data.title}</h2>
-                <p class="prose-base text-black px-3 pb-2">{posts.data.description}</p>
-                <button type="button" class="m-2 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                    <a href={`posts/${posts.slug}`}>Read More</a>
-                </button>
-            </div>
-        )}
+    <section class="bg-stone-50 h-screen">
+        <div class="container mx-auto pt-20">
+            <div class="grid gap-2 p-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                {allPosts.map((posts) => 
+                    <a href={`posts/${posts.slug}`} class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{posts.data.title}</h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    </a>
+                )}
+                </div>
         </div>
+        
     </section>
 </Layout>
  
 
+
+    
+
+    <!-- <div class="border border-gray-300 rounded-lg m-10">
+        <img class="rounded-t-lg" src={posts.data.image}/>
+        <h2 class="prose-base text-black text-3xl p-4">{posts.data.title}</h2>
+        <p class="prose-base text-black px-3 pb-2">{posts.data.description}</p>
+        <button type="button" class="m-2 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+            <a href={`posts/${posts.slug}`}>Read More</a>
+        </button>
+    </div> -->
 
  

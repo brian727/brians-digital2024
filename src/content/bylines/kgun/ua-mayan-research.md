@@ -1,10 +1,11 @@
 ---
-title: "Riding as therapy for Tucson trotters"
+title: "UA research team explores Mayan settlements"
 tag: ["kgun"]
 image: /img/hartman.jpg
-summary: "The findings showed 70 percent of children with autism who rode with horses reached 70 percent of their target behaviors."
-url: "https://www.kgun9.com/news/local-news/riding-as-therapy-for-tucson-trotters"
+summary: "A team of researchers at the University of Arizona are exploring ancient Mayan settlements in ways never done before."
+url: "https://www.kgun9.com/news/local-news/ua-research-team-explores-ancient-mayan-temples-from-the-air"
 ---
+## UA research team explores Mayan settlements
 
 The benefits of therapeutic horse riding have been touted in a study by the Journal of Autism and Developmental Disorders.
 

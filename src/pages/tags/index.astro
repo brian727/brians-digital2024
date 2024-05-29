@@ -6,7 +6,7 @@ const bylineTags = [...new Set(allBylines.map((byline) => byline.frontmatter.tag
 ---
 
 <Layout title="Tag Index">
-    <div class="prose h-screen bg-slate-200">
+    <div class="pt-20 mx-auto h-screen bg-slate-200 text-center">
         {bylineTags.map((tag) => 
             <h2 class="prose">
                 <a href={`/tags/${tag}`}>{tag}</a>

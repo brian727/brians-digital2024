@@ -4,26 +4,25 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import Client from "../../components/Client.astro";
 
 export async function getStaticPaths(){
-    const clientEntries = await getCollection("clients")
-;
+    const clientEntries = await getCollection('clients');
 
-return clientEntries.map((entry) => ({
+return clientEntries.map(entry => ({
     params: {slug: entry.slug},
     props: {entry},
 }));
 }
 
 const {entry} = Astro.props;
-
 const {Content} = await entry.render();
 
 ---
 
 <Layout title="Case Studies | Brians.Digital">
-    <section class="flex justify-center bg-slate-300 h-screen pt-32">
-        <article class="prose prose-slate">
+    <section class="flex justify-center bg-slate-300 h-full pt-32">
+        <div class="prose">
+            
             <Content/>
-        </article>
+        </div>
     </section>
 </Layout>
 
